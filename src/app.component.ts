@@ -1,20 +1,19 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { Router, RouterModule, Routes } from '@angular/router';
-import { SpinnerComponent } from './spinner.component';
-import { ProgressBarComponent } from './progress-bar.component';
+import { Component, OnInit } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-main',
-  standalone: true,
-  template: `
-		<div>
-    <a routerLink="/spinner">Spinner</a> <br/>
-    <a routerLink="/progress-bar">Progress Bar</a> <br/>
-    <router-outlet></router-outlet>
-</div>
+	selector: 'app-root',
+	standalone: true,
+	template: `
+		<div style="text-align: center">
+			<h1>NG Template Outlet Demo</h1>
+			<a routerLink="/spinner">Spinner</a> <br />
+			<a routerLink="/progress-bar">Progress Bar</a> <br />
+			<router-outlet></router-outlet>
+		</div>
 	`,
-  imports: [RouterModule],
+	imports: [RouterModule],
 })
 export class AppComponent implements OnInit {
-  ngOnInit(): void {}
+	ngOnInit(): void {}
 }
